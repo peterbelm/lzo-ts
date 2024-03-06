@@ -1,0 +1,39 @@
+{
+	"name": "lzo-ts",
+	"description": "a simple implementation of the lzo1x codec written in TypeScript",
+	"author": "Tom (https://github.com/ThaumicTom)",
+	"version": "1.0.0",
+	"license": "GPL-3.0",
+	"main": "dist/cjs/index.js",
+	"module": "dist/esm/index.js",
+	"umd:main": "dist/umd/index.js",
+	"types": "dist/types/index.d.js",
+	"files": [
+		"dist"
+	],
+	"devDependencies": {
+		"microbundle": "^0.15.1",
+		"tsm": "^2.3.0",
+		"uvu": "^0.5.6"
+	},
+	"scripts": {
+		"build": "microbundle",
+		"test": "uvu -r tsm tests"
+	},
+	"homepage": "https://github.com/thaumictom/node.ts#readme",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/thaumictom/node.ts.git"
+	},
+	"bugs": {
+		"web": "https://github.com/thaumictom/node.ts/issues"
+	},
+	"publishConfig": {
+		"registry": "https://registry.npmjs.org/"
+	},
+	"keywords": [
+		"typescript",
+		"lzo",
+		"lzo1x"
+	]
+}
