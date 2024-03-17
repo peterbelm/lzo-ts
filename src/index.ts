@@ -472,9 +472,8 @@ export class LZO {
 	 * @param buffer The buffer to compress.
 	 * @returns The compressed buffer.
 	 */
-	static compress<T = Uint8Array>(buffer: Buffer | Uint8Array | number[] | string): T {
-		if (!Buffer.isBuffer(buffer)) buffer = Buffer.from(buffer);
-		return new LZO().compressBuffer(buffer) as T;
+	static compress<T = Uint8Array>(buffer: Uint8Array | number[] | string): T {
+		return new LZO().compressBuffer(buffer as Uint8Array) as T;
 	}
 
 	/**
@@ -482,8 +481,7 @@ export class LZO {
 	 * @param buffer The buffer to decompress.
 	 * @returns The decompressed buffer.
 	 */
-	static decompress<T = Uint8Array>(buffer: Buffer | Uint8Array | number[] | string): T {
-		if (!Buffer.isBuffer(buffer)) buffer = Buffer.from(buffer);
-		return new LZO().decompressBuffer(buffer) as T;
+	static decompress<T = Uint8Array>(buffer: Uint8Array | number[] | string): T {
+		return new LZO().decompressBuffer(buffer as Uint8Array) as T;
 	}
 }
