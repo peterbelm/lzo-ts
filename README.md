@@ -1,29 +1,43 @@
 # lzo.ts
 
-a simple ~1.3 kB minified and gzipped implementation of the lzo1x codec written in TypeScript
+a simple ~1.4 kB minified and gzipped implementation of the lzo1x codec written in TypeScript
 
-## Installation
+## Installation & Usage
+
+### Node.js
 
 Install the package using your desired package manager.
 
 lzo.ts is fully compatible with yarn, pnpm, deno and bun.
 
 ```bash
-$ npm install lzo-ts
+npm install lzo-ts
 ```
 
-## Usage
-
 ```ts
-import { LZO } from 'node-ts';
+import { LZO } from 'lzo-ts';
 
-const input = 'Compress me!';
+const input = new TextEncoder().encode('Hello world!');
 
 const compressed = LZO.compress(input);
 
 const decompressed = LZO.decompress(compressed);
 
-console.log(decompressed); // Returns "Compress me!"
+console.log(decompressed); // Returns "Hello world!"
+```
+
+### Web environment
+
+If you are using the library in a web environment, you can include it directly from a CDN of your choice.
+
+```html
+<script src="https://www.unpkg.com/lzo-ts"></script>
+<script>
+	const { LZO } = lzoTs;
+
+	LZO.compress(/*...*/);
+	LZO.decompress(/*...*/);
+</script>
 ```
 
 ## Credits

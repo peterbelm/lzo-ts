@@ -4,9 +4,8 @@ const options: Parameters<typeof build>[0] = {
 	bundle: true,
 	entryPoints: ['src/index.ts'],
 	external: ['lzo-ts'],
+	mangleProps: /^_/,
 	minify: true,
-	mangleProps: /.*/,
-	reserveProps: /^compress$|^decompress$/,
 };
 
 // Platform neutral

@@ -14,8 +14,10 @@ const log = (...args: any[]): void => {
 	console.log(`${color}[LOG]${reset}`, ...args);
 };
 
-const testingMethod = (input: string | any[] | Uint8Array): Uint8Array => {
+const testingMethod = (input: string | number[] | Uint8Array): Uint8Array => {
 	const t0 = performance.now();
+
+	if (typeof input === 'string') input = new TextEncoder().encode(input as string);
 
 	const compressed = LZO.compress(input);
 
@@ -38,9 +40,9 @@ test('Simple text compression and decompression', () => {
 
 	const input = 'Hello, World!';
 
-	const output = String.fromCharCode(...testingMethod(input));
+	const output = new TextDecoder().decode(testingMethod(input));
 
-	assert.is(input, output);
+	assert.is(output, input);
 });
 
 test('Random compression and decompression', () => {
