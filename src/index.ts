@@ -1,9 +1,5 @@
 /**
  * Compress and decompress data using the LZO1X-1 algorithm.
- *
- * Derived from https://github.com/abraidwood/minilzo-js
- *
- * @author Alistair Braidwood (abraidwood), Markus F.X.J. Oberhumer
  * @license GPL-3.0
  */
 export class LZO {

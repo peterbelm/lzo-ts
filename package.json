@@ -2,27 +2,32 @@
 	"name": "lzo-ts",
 	"description": "a simple implementation of the lzo1x codec written in TypeScript",
 	"author": "Tom (https://github.com/ThaumicTom)",
-	"version": "0.1.2",
+	"version": "0.2.0",
 	"license": "GPL-3.0",
-	"type": "module",
 	"source": "src/index.ts",
+	"main": "dist/index.js",
+	"module": "dist/index.esm.js",
+	"unpkg": "dist/index.umd.js",
+	"types": "dist/index.d.ts",
 	"exports": {
-		"require": "./dist/gbx.cjs",
-		"default": "./dist/gbx.modern.js"
+		".": {
+			"import": "./dist/index.esm.js",
+			"require": "./dist/index.js",
+			"types": "./dist/index.d.ts"
+		}
 	},
-	"main": "./dist/gbx.cjs",
-	"module": "./dist/gbx.module.js",
-	"unpkg": "./dist/gbx.umd.js",
 	"files": [
-		"dist"
+		"/dist"
 	],
 	"devDependencies": {
-		"microbundle": "^0.15.1",
+		"esbuild": "^0.20.2",
 		"tsm": "^2.3.0",
 		"uvu": "^0.5.6"
 	},
 	"scripts": {
-		"build": "microbundle",
+		"build:types": "tsc --emitDeclarationOnly",
+		"build:bundle": "tsm build/bundle.ts",
+		"build": "npm run build:bundle && npm run build:types",
 		"test": "uvu -r tsm tests"
 	},
 	"homepage": "https://github.com/thaumictom/node.ts#readme",

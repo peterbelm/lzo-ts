@@ -1,6 +1,6 @@
 # lzo.ts
 
-a simple implementation of the lzo1x codec written in TypeScript
+a simple ~1.3 kB minified and gzipped implementation of the lzo1x codec written in TypeScript
 
 ## Installation
 

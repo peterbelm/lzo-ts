@@ -1,4 +1,4 @@
-import { LZO } from '../src';
+import { LZO } from '../dist';
 
 import * as assert from 'uvu/assert';
 import { test } from 'uvu';
@@ -14,7 +14,7 @@ const log = (...args: any[]): void => {
 	console.log(`${color}[LOG]${reset}`, ...args);
 };
 
-const testingMethod = (input: string | any[] | Uint8Array | Buffer): Uint8Array => {
+const testingMethod = (input: string | any[] | Uint8Array): Uint8Array => {
 	const t0 = performance.now();
 
 	const compressed = LZO.compress(input);
