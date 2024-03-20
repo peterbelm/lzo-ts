@@ -25,6 +25,7 @@ await build({
 // Platform browser
 await build({
 	...options,
+	globalName: 'lzoTs',
 	platform: 'browser',
 	outfile: 'dist/index.umd.js',
 });
