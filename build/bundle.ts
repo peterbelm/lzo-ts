@@ -12,7 +12,7 @@ const options: Parameters<typeof build>[0] = {
 await build({
 	...options,
 	platform: 'neutral',
-	outfile: 'dist/index.esm.js',
+	outfile: 'dist/index.mjs',
 });
 
 // Platform node
@@ -27,5 +27,5 @@ await build({
 	...options,
 	globalName: 'lzoTs',
 	platform: 'browser',
-	outfile: 'dist/index.umd.js',
+	outfile: 'dist/lzo.js',
 });

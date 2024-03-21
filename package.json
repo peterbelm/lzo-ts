@@ -2,12 +2,12 @@
 	"name": "lzo-ts",
 	"description": "a simple implementation of the lzo1x codec written in TypeScript",
 	"author": "Tom (https://github.com/ThaumicTom)",
-	"version": "0.2.1",
+	"version": "0.2.3",
 	"license": "GPL-3.0",
 	"source": "src/index.ts",
 	"main": "dist/index.js",
 	"module": "dist/index.mjs",
-	"unpkg": "dist/index.cjs",
+	"unpkg": "dist/lzo.js",
 	"types": "dist/index.d.ts",
 	"exports": {
 		".": {
