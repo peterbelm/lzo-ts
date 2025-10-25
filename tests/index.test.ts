@@ -75,6 +75,15 @@ test('Empty array compression and decompression', () => {
 	assert.equal(input, output);
 });
 
+test('Bad input decompression', () => {
+	log('Bad input decompression');
+	const testBlockData = new Uint8Array([0x01, 0x02, 0x03, 0x04]);
+
+	assert.throws(() => {
+		LZO.decompress(testBlockData);
+	}, (err: Error) => err.message === 'Invalid LZO compressed data');
+});
+
 test.before.each(() => {
 	console.log('\n');
 });

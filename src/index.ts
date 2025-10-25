@@ -106,6 +106,9 @@ export class LZO {
 		}
 
 		do {
+			if (this._inputPointer >= this._buffer.length) {
+				throw new Error('Invalid LZO compressed data');
+			}
 			this._out[this._outputPointer++] = this._buffer[this._inputPointer++];
 		} while (--this._t > 0);
 	}
